@@ -22,7 +22,7 @@ function Payment() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userRes = await fetch("http://localhost:5000/api/current-user", {
+        const userRes = await fetch("https://fsd-backend-pai8.onrender.com/api/current-user", {
           credentials: "include",
         });
 
@@ -34,7 +34,7 @@ function Payment() {
         const userData = await userRes.json();
         setUser(userData);
 
-        const bookRes = await fetch("http://localhost:5000/api/selected-book", {
+        const bookRes = await fetch("https://fsd-backend-pai8.onrender.com/api/selected-book", {
           credentials: "include",
         });
 
@@ -66,7 +66,7 @@ function Payment() {
   // 💳 CONFIRM PAYMENT (MongoDB)
   const confirmPayment = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/confirm-payment", {
+      const res = await fetch("https://fsd-backend-pai8.onrender.com/api/confirm-payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -93,7 +93,7 @@ function Payment() {
 
   // 🔓 Logout (Session based)
   const handleLogout = async () => {
-    await fetch("http://localhost:5000/api/logout", {
+    await fetch("https://fsd-backend-pai8.onrender.com/api/logout", {
       method: "POST",
       credentials: "include",
     });

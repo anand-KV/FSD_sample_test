@@ -29,7 +29,7 @@ function Home() {
     const fetchData = async () => {
       try {
         // Current logged-in user
-        const userRes = await fetch("http://localhost:5000/api/current-user", {
+        const userRes = await fetch("https://fsd-backend-pai8.onrender.com/api/current-user", {
           credentials: "include",
         });
         if (!userRes.ok) return;
@@ -37,14 +37,14 @@ function Home() {
         setUser(userData);
 
         // All system users
-        const systemRes = await fetch("http://localhost:5000/api/users", {
+        const systemRes = await fetch("https://fsd-backend-pai8.onrender.com/api/users", {
           credentials: "include",
         });
         const systemData = await systemRes.json();
         setSystem({ users: systemData });
 
         // All books
-        const booksRes = await fetch("http://localhost:5000/api/books", {
+        const booksRes = await fetch("https://fsd-backend-pai8.onrender.com/api/books", {
           credentials: "include",
         });
         const booksData = await booksRes.json();
@@ -59,7 +59,7 @@ function Home() {
 
   // 🚪 Logout
   const handleLogout = async () => {
-    await fetch("http://localhost:5000/api/logout", {
+    await fetch("https://fsd-backend-pai8.onrender.com/api/logout", {
       method: "POST",
       credentials: "include",
     });
@@ -97,7 +97,7 @@ function Home() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/books/update", {
+      const res = await fetch("https://fsd-backend-pai8.onrender.com/api/books/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

@@ -23,7 +23,7 @@ function EmployeeDashboard() {
         }
 
         // ✅ Get current logged-in employee
-        const userRes = await fetch("http://localhost:5000/api/users/me", {
+        const userRes = await fetch("https://fsd-backend-pai8.onrender.com/api/users/me", {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -45,7 +45,7 @@ function EmployeeDashboard() {
         setUser(userData);
 
         // ✅ Get books list
-        const booksRes = await fetch("http://localhost:5000/api/books", {
+        const booksRes = await fetch("https://fsd-backend-pai8.onrender.com/api/books", {
           headers: {
             Authorization: `Bearer ${token}`
           }

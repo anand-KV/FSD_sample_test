@@ -24,7 +24,7 @@ function OwnerDashboard() {
       }
 
       // Get current user
-      const userRes = await fetch("http://localhost:5000/api/users/me", {
+      const userRes = await fetch("https://fsd-backend-pai8.onrender.com/api/users/me", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -45,7 +45,7 @@ function OwnerDashboard() {
       setUser(userData);
 
       // Get users
-      const usersRes = await fetch("http://localhost:5000/api/users", {
+      const usersRes = await fetch("https://fsd-backend-pai8.onrender.com/api/users", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -57,7 +57,7 @@ function OwnerDashboard() {
       }
 
       // Get books (optional)
-      const booksRes = await fetch("http://localhost:5000/api/books", {
+      const booksRes = await fetch("https://fsd-backend-pai8.onrender.com/api/books", {
         headers: {
           Authorization: `Bearer ${token}`
         }

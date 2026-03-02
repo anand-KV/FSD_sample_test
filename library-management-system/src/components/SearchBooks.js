@@ -26,7 +26,7 @@ function SearchBooks({ user }) {
 
   // 📚 Load books from MongoDB
   useEffect(() => {
-    fetch("http://localhost:5000/api/books")
+    fetch("https://fsd-backend-pai8.onrender.com/api/books")
       .then((res) => res.json())
       .then((data) => setBooks(data))
       .catch((err) => console.error(err));
@@ -44,7 +44,7 @@ function SearchBooks({ user }) {
 
     try {
       // 1️⃣ Reduce book availability
-      await fetch(`http://localhost:5000/api/books/${book._id}`, {
+      await fetch(`https://fsd-backend-pai8.onrender.com/api/books/${book._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -53,7 +53,7 @@ function SearchBooks({ user }) {
       });
 
       // 2️⃣ Add book to user's borrowedBooks
-      await fetch(`http://localhost:5000/api/users/${user._id}/borrow`, {
+      await fetch(`https://fsd-backend-pai8.onrender.com/api/users/${user._id}/borrow`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -68,7 +68,7 @@ function SearchBooks({ user }) {
       setMessage(`✅ "${book.name}" added to cart`);
 
       // Refresh books
-      const updated = await fetch("http://localhost:5000/api/books");
+      const updated = await fetch("https://fsd-backend-pai8.onrender.com/api/books");
       const updatedData = await updated.json();
       setBooks(updatedData);
 

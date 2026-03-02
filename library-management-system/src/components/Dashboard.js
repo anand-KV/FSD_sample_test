@@ -16,7 +16,7 @@ function Dashboard({ user, setUser }) {
 
   // 🔄 Load all users from backend
   const loadUsers = async () => {
-    const res = await fetch("http://localhost:5000/api/users");
+    const res = await fetch("https://fsd-backend-pai8.onrender.com/api/users");
     const data = await res.json();
     setUsers(data);
   };
@@ -41,7 +41,7 @@ function Dashboard({ user, setUser }) {
 
   // 🧹 Clear one user history
   const clearUserHistory = async (id) => {
-    await fetch(`http://localhost:5000/api/users/${id}`, {
+    await fetch(`https://fsd-backend-pai8.onrender.com/api/users/${id}`, {
       method: "DELETE",
     });
     loadUsers();
@@ -49,7 +49,7 @@ function Dashboard({ user, setUser }) {
 
   // 🧹 Clear all history
   const clearAllHistory = async () => {
-    await fetch("http://localhost:5000/api/users", {
+    await fetch("https://fsd-backend-pai8.onrender.com/api/users", {
       method: "DELETE",
     });
     loadUsers();
