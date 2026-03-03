@@ -8,7 +8,8 @@ const cors=require("cors");
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: "http://localhost:3000", // frontend URL
+  origin: ["http://localhost:3000", // frontend URL
+            "https://fsd-sample-test-n4kq.vercel.app"],
   credentials: true
 }));
 const userRoutes = require("./routes/userRoutes");
