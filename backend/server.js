@@ -9,7 +9,9 @@ dotenv.config();
 const app = express();
 app.use(cors({
   origin: ["http://localhost:3000", // frontend URL
-            "https://fsd-sample-test-n4kq.vercel.app"],
+            "https://fsd-sample-test-n4kq.vercel.app"
+          ],
+  method: ["GET","POST","PUT","DELETE"],        
   credentials: true
 }));
 const userRoutes = require("./routes/userRoutes");
